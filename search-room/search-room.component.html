@@ -1,0 +1,39 @@
+<form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+  <div class="search">  
+  <h3>Search Room</h3>
+    <!--input type="hidden" name="status" #_id="ngModel" [(ngModel)]="roomService.selectedRoom.status"-->
+    <mat-form-field appearance="fill">
+      <mat-label>Room Type</mat-label>
+      <mat-select [(ngModel)]="roomType" name="room">
+        <mat-option *ngFor="let room of rooms" [value]="room.value">
+          {{room.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)='refershRoomList()'>Search</button>
+
+    <table class="responsive-table highlight">
+      <thead>
+        <tr>
+          <th>ROOM NO</th>
+          <th>ROOM TYPE</th>
+          <th>PRICE </th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tr *ngFor="let rom of roomService.rooms">
+       <td>{{rom.roomNo}}</td>
+       <td>{{rom.roomType}}</td>
+       <td>{{rom.price}}</td>
+       <td (click)="onSelect(rom)">
+      <button mat-raised-button color="accent">Book the room</button>
+       <!--a class="action-btn" (click)="onDelete(emp._id,employeeForm)">
+       <i class="material-icons">delete</i>
+       </a-->
+      </td>
+      </tr>
+    </table>
+  </div>
+  </form>

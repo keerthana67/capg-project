@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="bookingService.selectedBooking._id">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="roomNo" #name="ngModel" [(ngModel)]=rno disabled>
+                      <!--label>Room Number :
+                        <label class="red-text">*</label>
+                      </label-->
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="bookingService.selectedBooking.name" required>
+                    <label>Name :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="children" #name="ngModel" [(ngModel)]="bookingService.selectedBooking.children" >
+                    <label>Children :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="adult" #name="ngModel" [(ngModel)]="bookingService.selectedBooking.adult" >
+                    <label>Adult :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="Date" name="checkin" #name="ngModel" [(ngModel)]="bookingService.selectedBooking.checkin" placeholder="Checkin Date">
+                    <label>Checkin :</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input type="Date" name="checkout" #name="ngModel" [(ngModel)]="bookingService.selectedBooking.checkout" placeholder="Checkout Date">
+                      <label>Checkout :</label>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(bookingForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!bookingForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <!--table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let emp of bookingService.employees">
+                      <td>{{emp.name}}</td>
+                      <td>{{emp.position}}</td>
+                      <td>{{emp.office}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(emp)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(emp._id,employeeForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div-->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

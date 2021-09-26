@@ -1,0 +1,15 @@
+<div class="back">
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+    <h2>Login</h2>
+    <label for="email">Username</label>
+    <input type="text" name="username" #name="ngModel" [(ngModel)]="userService.selectedUser.username" required>
+    <div class="email error"></div>
+    <label for="password">Password</label>
+    <input type="password" name="password"  #name="ngModel" [(ngModel)]="userService.selectedUser.password" required>
+    <div class="password error"></div>
+    <button type="submit">Login</button>
+    <div class="alert" *ngIf="serverErrorMessages">
+        {{serverErrorMessages}}
+    </div>
+</form></div>

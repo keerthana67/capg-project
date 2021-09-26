@@ -1,0 +1,19 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  form{
+    width: 100%;
+    height: 10 0%;
+    background-image: url('../public/booking.jpg');
+    background: cover;
+  }
+  .search{
+    color:rgb(31, 29, 29);
+    font-weight:bolder ;
+    font-family: 'Times New Roman', Times, serif;
+  }
